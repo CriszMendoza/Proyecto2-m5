@@ -20,12 +20,13 @@ const $btnRegistro = document.getElementById("btn-registro")
 
 const getData = () =>{
   let usuario = {
-    nombre: document.getElementById("nombre").value,
-    contraseña: document.getElementById("contraseña").value,
-    monto: document.getElementById("monto").value
+    nombre: document.getElementById("nombre").name,
+    contraseña: document.getElementById("contraseña").name,
+    monto: document.getElementById("monto").name
   }
-  console.log(usuario)
+  cuentas.push(usuario)
 }
 
-console.log("Hola mundo");
+console.log(cuentas);
 $btnRegistro.addEventListener("click", getData)
+
