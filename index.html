@@ -11,46 +11,63 @@
 <body>
   <nav class="navbar navbar-light bg-dark">
     <a class="navbar-brand text-light" href="#">Cajero</a>
-    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modal-registro">Abrir cuenta</button>
+    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modal-registro">Iniciar sesión</button>
   </nav>
+  <!-- Main -->
+  <main id="main" class="bg-info">
+    <div id="incrustar">
 
-
-
-
-
-
-  <!-- Modal-->
+    </div>
+    
+  </main>
+  <!-- /Main -->
+  <!-- Modal - Iniciar sesión -->
   <div class="modal fade" id="modal-registro" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalCenterTitle">Crea tu cuenta</h5>
+          <h5 class="modal-title" id="exampleModalCenterTitle">Ingresa a tu cuenta</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
-          <form>
-            <div class="form-group">
-              <label for="nombre">Nombre</label>
-              <input type="text" class="form-control" id="nombre" name="nombre">
+          <form action="#" onsubmit="validar()" id="form">
+            <label for="user" >Usuario</label>
+            <input type="text" name="user" class="form-control" id="user" required>
+            <label for="user" >Contraseña</label>
+            <input type="password" name="password" class="form-control" id="password" required>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+              <button type="button" class="btn btn-primary" id="btn-enviar" >Iniciar sesión</button>
             </div>
-            <div class="form-group">
-              <label for="contraseña">Contraseña</label>
-              <input type="password" class="form-control" id="contraseña" name="contraseña">
-            </div>
-            <div class="form-group">
-              <label for="monto">Cantidad de apertura de cuenta</label>
-              <input type="number" class="form-control" id="monto" name="monto">
-            </div>
-            <button type="submit" class="btn btn-primary form-control" id="btn-registro">Crear cuenta</button>
+            <div id="form-alert"></div>
           </form>
         </div>
       </div>
     </div>
   </div>
-
-  
+  <!-- /Modal - Iniciar sesión -->
+  <!-- Modal - consulta de saldo -->
+  <div class="modal fade" id="consulta-saldo" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalCenterTitle">Consulta de saldo</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p id="modal-saldo"></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" id="consultarSaldo" >Consulta</button>
+        </div>
+      </div>
+    </div>
+  <!-- /Modal - consulta de saldo -->
 
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
