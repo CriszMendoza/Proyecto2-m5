@@ -32,7 +32,6 @@ let cuentas = [
   }
 ];
 
-
 function getDatos(){
   let user = document.getElementById("user").value,
       password = document.getElementById("password").value,
