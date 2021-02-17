@@ -8,15 +8,26 @@
   <link rel="stylesheet" href="./style.css">
   <title>Document</title>
 </head>
-<body class="bg-info">
+<body class="body-banner">
   <nav class="navbar navbar-light bg-dark">
-    <a class="navbar-brand text-light" href="./index.html">CAJERO</a>
+    <a class="navbar-brand text-info" href="./index.html">CAJERO</a>
     <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal-registro">Iniciar sesión</button>
   </nav>
   <!-- Main -->
   <main id="main">
-    <div id="incrustar">
-
+    <div id="incrustar" class="container mt-4">
+      <div>
+        <h2 class="h2 text-light">Banca digital</h2>
+      </div>
+      <div class="row">
+        <p class="col-6 text-light py-2 parrafo">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic dolores nam cupiditate nemo ea a modi. Dolorum aliquam, numquam ipsa nemo, atque ea nam, sequi veniam fuga nisi recusandae ex?
+          Nisi repellat dolore excepturi. Nemo voluptate mollitia tenetur soluta neque ab et quam. Reiciendis facere facilis unde in praesentium rerum exercitationem deleniti deserunt nisi animi eum, laboriosam nihil fugiat voluptates.</p>            
+      </div>
+      <br>
+      <div class="row">
+        <p class="col-6 text-light py-2 parrafo">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic dolores nam cupiditate nemo ea a modi. Dolorum aliquam, numquam ipsa nemo, atque ea nam, sequi veniam fuga nisi recusandae ex?
+          Nisi repellat dolore excepturi.</p>            
+      </div>
     </div>
     
   </main>
@@ -39,7 +50,7 @@
             <input type="password" name="password" class="form-control" id="password" required>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-              <button type="button" class="btn btn-primary" id="btn-enviar" >Iniciar sesión</button>
+              <button type="button" class="btn btn-info" id="btn-enviar" >Iniciar sesión</button>
             </div>
             <div id="form-alert"></div>
           </form>
@@ -63,7 +74,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary" id="consultarSaldo" >Consulta</button>
+          <button type="button" class="btn btn-info" id="consultarSaldo" >Consulta</button>
         </div>
       </div>
     </div>
@@ -88,7 +99,7 @@
           </form>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary" id="ingresar-monto">Agregar saldo</button>
+            <button type="button" class="btn btn-info" id="ingresar-monto">Agregar saldo</button>
           </div>
           <div id="saldo-actualizado"></div>
         </div>
@@ -115,7 +126,7 @@
           </form>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary" id="retirar-monto">Retirar saldo</button>
+            <button type="button" class="btn btn-info" id="retirar-monto">Retirar saldo</button>
           </div>
           <div id="saldo-retiro"></div>
         </div>

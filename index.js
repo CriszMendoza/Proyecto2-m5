@@ -54,9 +54,9 @@ function incrustraHTML (nombre) {
       </div>
       <div>
         <h4 class="mb-4">¿Que deseas hacer hoy?</h4>
-        <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#consulta-saldo">Consultar saldo</button>
-        <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#agregar-saldo">Ingresar monto</button>
-        <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#retirar-saldo" >Retirar monto</button>
+        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#consulta-saldo">Consultar saldo</button>
+        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#agregar-saldo">Ingresar monto</button>
+        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#retirar-saldo" >Retirar monto</button>
       </div>
     </div>
   `
