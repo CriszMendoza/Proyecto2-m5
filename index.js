@@ -13,7 +13,7 @@ let cuentas = [
   { 
     nombre: "Hiromi", 
     saldo: 200, 
-    password: "123" 
+    password: "helloworld" 
   },
   { 
     nombre: "Manuel", 
@@ -23,6 +23,11 @@ let cuentas = [
   { 
     nombre: "Luis", 
     saldo: 67, 
+    password: "123" 
+  },
+  { 
+    nombre: "Cristian", 
+    saldo: 175, 
     password: "123" 
   }
 ];
