@@ -37,14 +37,7 @@ function getDatos(){
   } else{
     for (let i = 0; i < cuentas.length; i++) {
       if (user === cuentas[i].nombre && password === cuentas[i].password){
-    
-        return incrustraHTML(cuentas[i].nombre)
-      }else {
-        return $form.outerHTML = `
-        <div class="alert alert-danger" role="alert" id="form-alert">
-          La contraseña que ingresaste es incorrecta
-        </div>
-        `
+        incrustraHTML(cuentas[i].nombre)
       }
     }  
   }
@@ -61,9 +54,9 @@ function incrustraHTML (nombre) {
       </div>
       <div>
         <h4 class="mb-4">¿Que deseas hacer hoy?</h4>
-        <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#consulta-saldo">Consultar saldo</button>
-        <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#agregar-saldo">Ingresar monto</button>
-        <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#retirar-saldo" >Retirar monto</button>
+        <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#consulta-saldo">Consultar saldo</button>
+        <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#agregar-saldo">Ingresar monto</button>
+        <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#retirar-saldo" >Retirar monto</button>
       </div>
     </div>
   `
