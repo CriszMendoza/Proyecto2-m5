@@ -3,6 +3,7 @@ let $btnRegistro = document.getElementById("btn-enviar")
 let $consultarSaldo = document.getElementById("consultarSaldo")
 let $btnAgregarSaldo = document.getElementById("ingresar-monto")
 let $btnRetirarSaldo = document.getElementById("retirar-monto")
+let $btnIniciarSesion = document.getElementById("btn-iniciar-sesion")
 $btnRegistro.addEventListener("click", getDatos)
 $btnRegistro.addEventListener("click", sesionIniciada)
 $consultarSaldo.addEventListener("click",consultarSaldo)
@@ -41,6 +42,7 @@ function getDatos(){
   } else{
     for (let i = 0; i < cuentas.length; i++) {
       if (user === cuentas[i].nombre && password === cuentas[i].password){
+        $btnIniciarSesion.disabled = true
         incrustraHTML(cuentas[i].nombre)
       }
     }  
