@@ -1,3 +1,14 @@
+let usuario;
+let $btnRegistro = document.getElementById("btn-enviar")
+let $consultarSaldo = document.getElementById("consultarSaldo")
+let $btnAgregarSaldo = document.getElementById("ingresar-monto")
+let $btnRetirarSaldo = document.getElementById("retirar-monto")
+$btnRegistro.addEventListener("click", getDatos)
+$btnRegistro.addEventListener("click", sesionIniciada)
+$consultarSaldo.addEventListener("click",consultarSaldo)
+$btnAgregarSaldo.addEventListener("click",ingresarMonto)
+$btnRetirarSaldo.addEventListener("click",retirarMonto)
+
 let cuentas = [
   { 
     nombre: "Hiromi", 
@@ -16,14 +27,6 @@ let cuentas = [
   }
 ];
 
-let usuario;
-let $btnRegistro = document.getElementById("btn-enviar")
-let $consultarSaldo = document.getElementById("consultarSaldo")
-let $btnAgregarSaldo = document.getElementById("ingresar-monto")
-$btnRegistro.addEventListener("click", getDatos)
-$btnRegistro.addEventListener("click", sesionIniciada)
-$consultarSaldo.addEventListener("click",consultarSaldo)
-$btnAgregarSaldo.addEventListener("click",ingresarMonto)
 
 function getDatos(){
   let user = document.getElementById("user").value,
@@ -38,7 +41,7 @@ function getDatos(){
         return incrustraHTML(cuentas[i].nombre)
       }else {
         return $form.outerHTML = `
-        <div class="alert alert-danger" role="alert">
+        <div class="alert alert-danger" role="alert" id="form-alert">
           La contraseña que ingresaste es incorrecta
         </div>
         `
@@ -78,29 +81,55 @@ function sesionIniciada (){
 
 function consultarSaldo(){
   let $modalSaldo = document.getElementById("modal-saldo")
-  $modalSaldo.textContent =`Tu saldo disponible es de: $${usuario.saldo}.00`
+  $modalSaldo.outerHTML = `
+  <div class="alert alert-success" role="alert" id="modal-saldo">
+      Tu saldo es de <b>$${usuario.saldo}.00</b>
+  </div>
+  `
 }
 
 function ingresarMonto(){
   let $montoAgregado = parseInt(document.getElementById("agregarSaldo").value)
   let $saldoActualizado = document.getElementById("saldo-actualizado")
-  if (usuario.saldo + $montoAgregado < 10 || usuario.saldo + $montoAgregado < 998) {
+  if (usuario.saldo + $montoAgregado < 10 || usuario.saldo + $montoAgregado > 998) {
+    $saldoActualizado.outerHTML = `
+    <div class="alert alert-danger" role="alert" id="saldo-actualizado">
+      El saldo de tu cuenta no puede ser menor de <b>$10.00</b> ni mayor a <b>$999.00</b>
+    </div>`
+  } else if(Math.sign($montoAgregado) === -1 || $montoAgregado === 0 || isNaN($montoAgregado)){
+    $saldoActualizado.outerHTML = `
+    <div class="alert alert-danger" role="alert" id="saldo-actualizado">
+      No puedes ingresar números negativos o dejar el campo vacío
+    </div>`
+  } else{
     usuario.saldo += $montoAgregado
     $saldoActualizado.outerHTML =
     `
     <div class="alert alert-success" role="alert" id="saldo-actualizado">
-      Tu nuevo saldo es de $${usuario.saldo}.00
-    </div>`
-  }else{
-    $saldoActualizado.outerHTML = `
-    <div class="alert alert-danger" role="alert" id="saldo-actualizado">
-      El saldo de tu cuenta no puede ser menor de $10.00 ni mayor a $999.00
+      Tu nuevo saldo es de <b>$${usuario.saldo}.00</b>
     </div>`
   }
 }
 
 function retirarMonto() {
-
-
-
+  let $montoRetirado = parseInt(document.getElementById("retirarSaldo").value)
+  let $saldoActualizado = document.getElementById("saldo-retiro")
+  if (usuario.saldo - $montoRetirado < 10 || usuario.saldo - $montoRetirado > 998) {
+    $saldoActualizado.outerHTML = `
+    <div class="alert alert-danger" role="alert" id="saldo-retiro">
+      El saldo de tu cuenta no puede ser menor de <b>$10.00</b> ni mayor a <b>$999.00</b>
+    </div>`
+  } else if(Math.sign($montoRetirado) === -1 || $montoRetirado === 0 || isNaN($montoRetirado)){
+    $saldoActualizado.outerHTML = `
+    <div class="alert alert-danger" role="alert" id="saldo-retiro">
+      No puedes ingresar números negativos o dejar el campo vacío
+    </div>`
+  } else{
+    usuario.saldo -= $montoRetirado
+    $saldoActualizado.outerHTML =
+    `
+    <div class="alert alert-success" role="alert" id="saldo-retiro">
+      Tu nuevo saldo es de <b>$${usuario.saldo}.00</b>
+    </div>`
+  }
 }
