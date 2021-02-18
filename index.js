@@ -59,13 +59,13 @@ function incrustraHTML (nombre) {
   $main.outerHTML=`
   <div class="container text-light pt-5 pb-5" id="main-modal">
       <div>
-        <h2 id="benvenida">Hola ${nombre} Bienvenid@!</h2>
+        <h2 id="benvenida" class="text-center text-sm-left">Hola ${nombre} Bienvenid@!</h2>
       </div>
-      <div>
+      <div class="text-center text-sm-left">
         <h4 class="mb-4">¿Que deseas hacer hoy?</h4>
-        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#consulta-saldo">Consultar saldo</button>
-        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#agregar-saldo">Ingresar monto</button>
-        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#retirar-saldo" >Retirar monto</button>
+        <button type="button" class="btn btn-info d-sm-inline-block d-block mt-2 mt-sm-0 mx-auto" data-toggle="modal" data-target="#consulta-saldo">Consultar saldo</button>
+        <button type="button" class="btn btn-info d-sm-inline-block mt-2 mt-sm-0 mx-auto" data-toggle="modal" data-target="#agregar-saldo">Ingresar monto</button>
+        <button type="button" class="btn btn-info d-sm-inline-block mt-2 mt-sm-0 mx-auto" data-toggle="modal" data-target="#retirar-saldo" >Retirar monto</button>
       </div>
     </div>
   `
